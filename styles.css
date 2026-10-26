@@ -1,0 +1,138 @@
+:root {
+  --ink: #0f1f33;
+  --muted: #4b5d73;
+  --bg: #eef2f6;
+  --surface: #ffffff;
+  --line: #cfd8e3;
+  --teal: #0a7f84;
+  --teal-dark: #075f63;
+  --amber: #f0b429;
+  --radius: 10px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+body {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+/* Encabezado */
+.topbar { background: var(--ink); color: #fff; }
+.topbar-inner {
+  max-width: 1100px; margin: 0 auto; padding: 14px 24px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+}
+.brand { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.25rem; text-decoration: none; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+nav a { text-decoration: none; font-size: .95rem; color: #cfe0f0; padding: 4px 0; border-bottom: 2px solid transparent; }
+nav a:hover { border-bottom-color: var(--amber); color: #fff; }
+
+/* Portada */
+.hero { background: var(--ink); color: #fff; padding: 56px 24px 84px; }
+.hero-small { padding: 40px 24px 72px; }
+.hero-inner { max-width: 1100px; margin: 0 auto; }
+.level {
+  display: inline-block; background: var(--amber); color: var(--ink);
+  font-weight: 600; padding: 2px 12px; border-radius: 999px; margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
+  font-size: clamp(2.4rem, 7vw, 4.6rem); line-height: 1.05; max-width: 14ch;
+}
+.hero .lead { margin-top: 18px; max-width: 54ch; color: #cfe0f0; font-size: 1.15rem; }
+.facts { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px 36px; list-style: none; }
+.facts li strong { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.8rem; line-height: 1.1; }
+.facts li span { color: #cfe0f0; font-size: .95rem; }
+.progress { margin-top: 24px; height: 8px; max-width: 360px; background: #2a415c; border-radius: 99px; overflow: hidden; }
+.progress span { display: block; height: 100%; background: var(--amber); }
+.progress-text { margin-top: 6px; font-size: .92rem; color: #cfe0f0; }
+
+main { max-width: 1100px; margin: -44px auto 0; padding: 0 24px 64px; }
+h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: 1.6rem; line-height: 1.2; }
+
+/* Unidades y semanas (índice) */
+.unit { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.unit:first-child { margin-top: 0; }
+.unit-head p { margin-top: 8px; }
+.unit-desc { color: var(--muted); max-width: 75ch; }
+.weeks { margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.week {
+  display: flex; flex-direction: column; gap: 2px; text-decoration: none;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px;
+  transition: border-color .15s, background .15s;
+}
+.week:hover { border-color: var(--teal); background: #e3f3f4; }
+.week-num { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.05rem; color: var(--teal-dark); }
+.week-title { color: var(--ink); font-size: .98rem; line-height: 1.35; }
+
+.tag { display: inline-block; font-size: .88rem; font-weight: 600; padding: 1px 10px; border-radius: 6px; background: #dff1f2; color: var(--teal-dark); }
+.tag.weeks { background: #fff3cd; color: #6b4e00; }
+
+/* Página de semana */
+.grid { display: grid; gap: 18px; }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.card h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.25rem; margin-bottom: 10px; }
+.card p { color: var(--muted); margin-top: 8px; max-width: 75ch; }
+.list { margin-left: 20px; color: var(--muted); }
+.list li { margin-bottom: 10px; }
+.card.wide { margin-top: 18px; }
+.key { color: var(--ink); background: #fff8e1; border-left: 4px solid var(--amber); padding: 10px 14px; border-radius: 4px; }
+
+.pager { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.nav-btn {
+  display: inline-block; text-decoration: none; font-weight: 600;
+  background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 8px;
+}
+.nav-btn:hover { background: var(--teal-dark); }
+.nav-btn.home { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.nav-btn.home:hover { background: var(--ink); color: #fff; }
+
+/* Pie */
+footer { background: var(--ink); color: #cfe0f0; }
+.footer-inner {
+  max-width: 1100px; margin: 0 auto; padding: 28px 24px;
+  display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between;
+}
+footer a { text-decoration: none; border-bottom: 1px solid var(--amber); }
+footer a:hover { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .week { transition: none; }
+}
+
+/* Plan de sesiones */
+.sec-title { margin: 36px 0 16px; }
+.steps { margin-left: 20px; color: var(--muted); }
+.steps li { margin-bottom: 12px; }
+.steps li strong { color: var(--ink); }
+.session h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+/* Clases detalladas */
+.stage { margin-top: 18px; }
+.stage h4 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.stage h5 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1rem; margin: 18px 0 6px; }
+.mats { font-size: .98rem; }
+.tbl { overflow-x: auto; margin-top: 8px; border: 1px solid var(--line); border-radius: 8px; }
+.tbl table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .95rem; }
+.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--muted); }
+.tbl th { background: var(--bg); color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; }
+.tbl tr:last-child td { border-bottom: 0; }
+.card a { color: var(--teal-dark); }
+
+/* Imagen de unidad */
+.unit-img { display: block; margin-top: 18px; width: 100%; max-width: 380px; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+
+/* Fondo de portada (primer-anio.html) */
+.hero-banner { background: #0b4a9e url("img/hero-primer-anio.jpg") center / cover no-repeat; }
+
+/* Material ampliado (semana 1) */
+details.extra { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 20px 20px; margin-top: 28px; }
+details.extra summary { cursor: pointer; font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: 1.15rem; padding: 14px 0; }
+details.extra[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px; }
